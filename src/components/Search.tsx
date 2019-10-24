@@ -2,47 +2,42 @@ import React from 'react'
 
 export interface ISearchProps {
   padding?: string
+  onSubmit: (name: string) => void
 }
 
-interface ISearchState {
-  onFormSubmit: () => void
-  term: string
-  onSubmit: () => void
+export interface ISearchState {
+  name: string
 }
 
-class SearchBar extends React.Component<ISearchProps, ISearchState> {
-  state = {
-    term: '',
-    onFormSubmit: () => {},
-    onInputChange: () => {},
+class Search extends React.Component<ISearchProps, ISearchState> {
+  constructor(props: any){
+    super(props)
+    this.state={
+      name: ''
+    }
+  }
+  handleChange = (event: any) => {
+    this.setState({
+      name: event.target.value
+    })
   }
 
-  onInputChange = event => {
-    this.setState({ term: event.target.value })
-  }
-
-  onFormSubmit = event => {
+  handleSubmit=(event: any)=>{
+    // Prevent button click from submitting form
     event.preventDefault()
-
-    this.props.onFormSubmit(term)
+    this.props.onSubmit(this.state.name)
+    this.setState({
+    name: ''
+    })
   }
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={null}>
-          <div>
-            <label></label>
-            <input
-              type="text"
-              value={this.state.term}
-              onChange={this.onInputChange}
-            />
-          </div>
-        </form>
-      </div>
+  render(){
+    return(
+      <form onSubmit={this.handleSubmit}>
+      <input type='text' onChange={this.handleChange} value={this.state.name}/>
+      </form>
     )
   }
 }
 
-export default SearchBar
+export default Search
