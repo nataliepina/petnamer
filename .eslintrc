@@ -1,7 +1,21 @@
 {
-  "extends": ["react-app", "plugin:prettier/recommended"],
+  "extends": ["airbnb-base", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "plugins": ["prettier"],
   "rules": {
+    "prettier/prettier": ["error"],
     "camelcase": 0,
-    "strict": 0
+    "strict": 0,
+    "no-plusplus": "off",
+    "no-underscore-dangle": "off"
   }
 }

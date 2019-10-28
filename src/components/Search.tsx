@@ -10,31 +10,35 @@ export interface ISearchState {
 }
 
 class Search extends React.Component<ISearchProps, ISearchState> {
-  constructor(props: any){
+  constructor(props: ISearchProps) {
     super(props)
-    this.state={
-      name: ''
+    this.state = {
+      name: '',
     }
   }
   handleChange = (event: any) => {
     this.setState({
-      name: event.target.value
+      name: event.target.value,
     })
   }
 
-  handleSubmit=(event: any)=>{
+  handleSubmit = (event: any) => {
     // Prevent button click from submitting form
     event.preventDefault()
     this.props.onSubmit(this.state.name)
     this.setState({
-    name: ''
+      name: '',
     })
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <form onSubmit={this.handleSubmit}>
-      <input type='text' onChange={this.handleChange} value={this.state.name}/>
+        <input
+          type="text"
+          onChange={this.handleChange}
+          value={this.state.name}
+        />
       </form>
     )
   }
