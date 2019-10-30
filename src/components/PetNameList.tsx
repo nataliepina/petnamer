@@ -20,8 +20,8 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
 
   async componentDidMount() {
     try {
-      const response = await fetch('http://localhost:9000/api/petnames')
-      const collection = await response.json()
+      const response = await fetch('http://localhost:9000/api/petnames') // wait until we have the data
+      const collection = await response.json() // wait to parse json
       this.setState({collection})
     } catch (error) {
       console.error(error)
