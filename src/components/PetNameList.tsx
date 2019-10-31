@@ -2,6 +2,8 @@ import React from 'react'
 import Search from './Search'
 import Toggle from './Toggle'
 
+const endpoint = 'http://pet-namer.herokuapp.com/api/petnames'
+
 interface PetNameListProps {}
 
 interface PetNameListState {
@@ -20,7 +22,7 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
 
   async componentDidMount() {
     try {
-      const response = await fetch('http://localhost:9000/api/petnames') // wait until we have the data
+      const response = await fetch(endpoint) // wait until we have the data
       const collection = await response.json() // wait to parse json
       this.setState({collection})
     } catch (error) {
@@ -45,7 +47,7 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
   }
 
   handleSubmit = async (name: string) => {
-    const newPet = await this.postData('http://localhost:9000/api/petnames', {
+    const newPet = await this.postData(endpoint, {
       name: name,
     })
     this.setState({
