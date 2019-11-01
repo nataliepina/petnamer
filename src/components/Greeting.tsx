@@ -30,7 +30,9 @@ class Greeting extends React.Component<IGreetingProps, IGreetingState> {
   render() {
     return (
       <>
-        <h4>{this.state.greeting}</h4>
+        <div className="speech-bubble">
+          <h5 className="speech-bubble-text">{this.state.greeting}</h5>
+        </div>
       </>
     )
   }

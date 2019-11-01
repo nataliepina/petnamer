@@ -9,8 +9,8 @@ $white: #f1f1f1;
 }
 
 .App-logo {
-  height: 10em;
-  width: 10em;
+  height: 12em;
+  width: 12em;
 }
 
 .App-header {
@@ -28,7 +28,7 @@ $white: #f1f1f1;
 // Pet Name
 
 .pet-name {
-  margin-bottom: -20px;
+  margin-bottom: -2em;
 }
 
 .pet-name-header {
@@ -64,6 +64,9 @@ $white: #f1f1f1;
 ul {
   list-style: none;
   padding-inline-start: 0px;
+  li {
+    font-size: 1.4em;
+  }
 }
 
 input[type=text] {
@@ -104,3 +107,32 @@ input[type=text]:focus {
 
 
 
+
+.speech-bubble {
+	position: relative;
+	background: $white;
+  border-radius: .8em;
+  width: 40%;
+  margin: -2em 0 5em 42%;
+
+  &-text {
+    color: #000;
+    padding: 5px;
+    font-weight: 300;
+  }
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-bottom-color: $white;
+	border-top: 0;
+	border-left: 0;
+  margin-left: 5px;
+  margin-top: -15px;
+}
