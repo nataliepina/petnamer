@@ -1,21 +1,53 @@
 {
-  "extends": ["airbnb-base", "prettier"],
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/no-inferred-empty-object-type": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-namespace": 0,
+    "@typescript-eslint/no-parameter-properties": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/strict-type-predicates": 0,
+    "@typescript-eslint/typeof-compare": 0,
+    "no-console": 0,
+    "no-magic-numbers": [
+      "error", {
+        "ignore": [
+          -10,
+          -1,
+          0,
+          1,
+          2,
+          10,
+          100,
+          1000
+        ]
+      }
+    ],
+    "no-prototype-builtins": 0,
+    "require-atomic-updates": 0
+  },
+  "settings":  {
+    "react":  {
+      "version": "detect"
+    }
   },
   "env": {
     "browser": true,
     "node": true,
-    "es6": true,
     "jest": true
-  },
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": ["error"],
-    "camelcase": 0,
-    "strict": 0,
-    "no-plusplus": "off",
-    "no-underscore-dangle": "off"
   }
 }
