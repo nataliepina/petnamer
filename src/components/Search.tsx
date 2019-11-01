@@ -33,13 +33,16 @@ class Search extends React.Component<ISearchProps, ISearchState> {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          onChange={this.handleChange}
-          value={this.state.name}
-        />
-      </form>
+      <div className="input-container">
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.name}
+            placeholder="Type name here..."
+          />
+        </form>
+      </div>
     )
   }
 }

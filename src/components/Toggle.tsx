@@ -1,15 +1,19 @@
 import React from 'react'
 
-interface ToggleProps {
+interface IToggleProps {
   isToggleOn: boolean
   handleClick: () => void
 }
 
-const Toggle = ({isToggleOn, handleClick}: ToggleProps) => {
+const Toggle = ({isToggleOn, handleClick}: IToggleProps) => {
   return (
     <>
-      <div>{isToggleOn && <p>Add Your Own Creation...</p>}</div>
-      <button onClick={handleClick}>{isToggleOn ? 'OFF' : 'ON'}</button>
+      <div className="toggle-container">
+        <button className="btn" onClick={handleClick}>
+          {isToggleOn ? 'x Close' : '+ Add'}
+        </button>
+      </div>
+      {/* <div>{isToggleOn && <p>+</p>}</div> */}
     </>
   )
 }

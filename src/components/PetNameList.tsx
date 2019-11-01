@@ -1,6 +1,7 @@
 import React from 'react'
 import Search from './Search'
 import Toggle from './Toggle'
+import ButtonLoader from './ButtonLoader'
 
 const endpoint = 'http://pet-namer.herokuapp.com/api/petnames'
 
@@ -9,6 +10,7 @@ interface PetNameListProps {}
 interface PetNameListState {
   collection?: Array<string> | any
   isToggleOn: boolean
+  loading?: boolean
 }
 
 class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
@@ -17,17 +19,25 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
     this.state = {
       collection: [],
       isToggleOn: true,
+      loading: false,
     }
   }
 
-  async componentDidMount() {
-    try {
-      const response = await fetch(endpoint) // wait until we have the data
-      const collection = await response.json() // wait to parse json
-      this.setState({collection})
-    } catch (error) {
-      console.error(error)
-    }
+  fetchData = () => {
+    this.setState(
+      {
+        loading: true,
+      },
+      async () => {
+        try {
+          const response = await fetch(endpoint) // wait until we have the data
+          const collection = await response.json() // wait to parse json
+          this.setState({collection, loading: false})
+        } catch (error) {
+          console.error(error)
+        }
+      },
+    )
   }
 
   postData = async (url = '', data = {}) => {
@@ -67,9 +77,10 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
     )
     return (
       <div>
-        <ul>{list}</ul>
-        {this.state.isToggleOn && <Search onSubmit={this.handleSubmit} />}
-        <div>
+        {this.state.loading ? null : <ul>{list}</ul>}
+        <ButtonLoader loading={this.state.loading} onClick={this.fetchData} />
+        <div className="add-name-container">
+          {this.state.isToggleOn && <Search onSubmit={this.handleSubmit} />}
           <Toggle
             isToggleOn={this.state.isToggleOn}
             handleClick={this.handleClick}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,700&display=swap');
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+$primaryColor: #7a67d4;
+$white: #f1f1f1;
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 10em;
+  width: 10em;
+}
+
+.App-header {
+  background: radial-gradient(circle, rgba(32,91,244,1) 0%, rgba(190,111,186,1) 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: $white;
+  font-family: 'Hind', sans-serif;
+}
+
+// Pet Name
+
+.pet-name {
+  margin-bottom: -20px;
+}
+
+.pet-name-header {
+  font-size: 2.5em;
+  font-weight: 400;
+  margin-bottom: 0;
+  margin-top: 2em;
+}
+
+// Button Styles
+
+.btn {
+  color: $white !important;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: none;
+  padding: 5px 10px;
+  border: 4px solid $white !important;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  }
+
+.btn:hover {
+  color: #ffffff;
+  background: $primaryColor;
+  border-color: $primaryColor !important;
+  transition: all 0.4s ease 0s;
+}
+
+// Pet Name List
+
+ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
+
+input[type=text] {
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  padding: 10px 20px 10px 8px;
+  font-size: 16px;
+  background: none;
+  color: $white;
+  border: 3px solid $white;
+}
+
+input[type=text]::placeholder {
+  color: $white;
+  opacity: .6;
+}
+
+
+input[type=text]:focus {
+  border: 3px solid $white;
+  outline-width: 0;
+  color: $white;
+
+  &::placeholder {
+    opacity: 8;
+  }
+}
+
+.add-name-container {
+  margin: 100px 10px;
+}
+
+// Toggle
+
+.toggle-container {
+  margin: 20px 10px;
+}
+
+
+
