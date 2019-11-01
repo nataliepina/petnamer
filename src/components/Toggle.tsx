@@ -13,7 +13,6 @@ const Toggle = ({isToggleOn, handleClick}: IToggleProps) => {
           {isToggleOn ? 'x Close' : '+ Add'}
         </button>
       </div>
-      {/* <div>{isToggleOn && <p>+</p>}</div> */}
     </>
   )
 }
