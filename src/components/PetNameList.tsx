@@ -72,7 +72,7 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
   }
 
   render() {
-    let list = this.state.collection.map(
+    const list = this.state.collection.map(
       ({id, name}: {id: number; name: string}) => <li key={id}>{name}</li>,
     )
     return (
