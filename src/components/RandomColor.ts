@@ -1,6 +1,4 @@
 import React from 'react'
-/* eslint no-magic-numbers: 0 */
-/* eslint no-prefer-const: 0 */
 
 function generate() {
   const hexValues = [
