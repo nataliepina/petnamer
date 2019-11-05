@@ -1,13 +1,13 @@
 import React from 'react'
 
-export interface ISearchProps {
+export interface IButtonLoaderProps {
   loading?: boolean
   onClick: () => void
 }
 
-export interface ISearchState {}
+export interface IButtonLoaderProps {}
 
-const ButtonLoader = ({loading, onClick}: ISearchProps) => {
+const ButtonLoader = ({loading, onClick}: IButtonLoaderProps) => {
   return (
     <div>
       <div className="btn-container">
@@ -15,7 +15,7 @@ const ButtonLoader = ({loading, onClick}: ISearchProps) => {
           {loading ? (
             <div className="loader">Loading...</div>
           ) : (
-            <div>Generate</div>
+            <div>User Submitted List</div>
           )}
         </button>
       </div>

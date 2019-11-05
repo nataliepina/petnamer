@@ -1,16 +1,16 @@
 import React from 'react'
 
-export interface ISearchProps {
+export interface IAddNameProps {
   padding?: string
   onSubmit: (name: string) => void
 }
 
-export interface ISearchState {
+export interface IAddNameState {
   name: string
 }
 
-class Search extends React.Component<ISearchProps, ISearchState> {
-  constructor(props: ISearchProps) {
+class AddName extends React.Component<IAddNameProps, IAddNameState> {
+  constructor(props: IAddNameProps) {
     super(props)
     this.state = {
       name: '',
@@ -34,17 +34,18 @@ class Search extends React.Component<ISearchProps, ISearchState> {
   render() {
     return (
       <div className="input-container">
-        <form onSubmit={this.handleSubmit}>
+        <form className="input-container-form" onSubmit={this.handleSubmit}>
           <input
             type="text"
             onChange={this.handleChange}
             value={this.state.name}
             placeholder="Type name here..."
           />
+          <input className="btn btn-submit" type="submit" value="Submit" />
         </form>
       </div>
     )
   }
 }
 
-export default Search
+export default AddName

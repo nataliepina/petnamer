@@ -1,5 +1,5 @@
 import React from 'react'
-import Search from './Search'
+import AddName from './AddName'
 import Toggle from './Toggle'
 import ButtonLoader from './ButtonLoader'
 
@@ -80,7 +80,7 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
         {this.state.loading ? null : <ul>{list}</ul>}
         <ButtonLoader loading={this.state.loading} onClick={this.fetchData} />
         <div className="add-name-container">
-          {this.state.isToggleOn && <Search onSubmit={this.handleSubmit} />}
+          {this.state.isToggleOn && <AddName onSubmit={this.handleSubmit} />}
           <Toggle
             isToggleOn={this.state.isToggleOn}
             handleClick={this.handleClick}
