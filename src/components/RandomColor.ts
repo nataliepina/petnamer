@@ -1,7 +1,9 @@
 import React from 'react'
+/* eslint no-magic-numbers: 0 */
+/* eslint no-prefer-const: 0 */
 
 function generate() {
-  let hexValues = [
+  const hexValues = [
     '0',
     '1',
     '2',
@@ -19,24 +21,25 @@ function generate() {
     'e',
   ]
 
-  function populate(a) {
+  function populate(a: any) {
     for (let i = 0; i < 6; i++) {
-      let x = Math.round(Math.random() * 14)
-      let y = hexValues[x]
+      const x = Math.round(Math.random() * 14)
+      const y = hexValues[x]
       a += y
     }
     return a
   }
 
-  let newColor1 = populate('#')
-  let newColor2 = populate('#')
-  let angle = Math.round(Math.random() * 360)
+  const newColor1 = populate('#')
+  const newColor2 = populate('#')
+  const angle = Math.round(Math.random() * 360)
 
-  let gradient =
+  const gradient =
     'linear-gradient(' + angle + 'deg, ' + newColor1 + ', ' + newColor2 + ')'
-
+  //@ts-ignore
   document.getElementById('container').style.background = gradient
+  //@ts-ignore
   document.getElementById('output').innerHTML = gradient
 }
-
+//@ts-ignore
 document.onload = generate()
