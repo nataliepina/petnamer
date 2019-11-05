@@ -41,3 +41,21 @@ function generate() {
 }
 //@ts-ignore
 document.onload = generate()
+
+const COLORS = [
+  '#D291BC',
+  '#957DAD',
+  '#6CB2D1',
+  '#202020',
+  '#66bbae',
+  '#3eb5c1',
+  '#ffaaa5',
+  '#80d0c7',
+]
+
+document.body.style.backgroundColor = '#202020'
+
+document.onclick = () => {
+  document.body.style.backgroundColor =
+    COLORS[Math.floor(Math.random() * COLORS.length)]
+}
