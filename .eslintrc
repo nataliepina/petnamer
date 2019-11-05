@@ -22,13 +22,13 @@
     "@typescript-eslint/no-use-before-define": 0,
     "@typescript-eslint/strict-type-predicates": 0,
     "@typescript-eslint/typeof-compare": 0,
-    "no-console": 0,
-    "no-magic-numbers": 0,
-    "no-prototype-builtins": 0,
-    "require-atomic-updates": 0,
-    "ban-ts-ignore": 0,
-    "no-empty-interface": 0,
-    "no-prefer-const": 0
+    "@typescript-eslint/no-console": 0,
+    "@typescript-eslint/no-magic-numbers": 0,
+    "@typescript-eslint/no-prototype-builtins": 0,
+    "@typescript-eslint/require-atomic-updates": 0,
+    "@typescript-eslint/ban-ts-ignore": 0,
+    "@typescript-eslint/no-empty-interface": 0,
+    "@typescript-eslint/no-prefer-const": 0
   },
   "settings":  {
     "react":  {
