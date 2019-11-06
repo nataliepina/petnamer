@@ -5,7 +5,7 @@
   "author": "Natalie Pina",
   "private": true,
   "dependencies": {
-    "@types/jest": "^24.0.21",
+    "@types/jest": "^24.0.22",
     "@types/node": "^12.12.5",
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
@@ -25,7 +25,7 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "ts-jest",
     "test:watch": "jest src --watch --notify",
     "cover": "jest --coverage",
     "eject": "react-scripts eject",
@@ -59,7 +59,8 @@
     "eslint-plugin-react": "^7.16.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0"
   },
   "husky": {
     "hooks": {
