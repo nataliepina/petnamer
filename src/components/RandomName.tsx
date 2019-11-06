@@ -9,23 +9,31 @@ interface INameState {
   loading?: boolean
 }
 
-export interface IButtonProps {
+interface IButtonProps {
   loading?: boolean
   onClick: () => void
+  title?: string
+  spinner?: any
 }
 
-export interface IButtonProps {}
+interface IButtonProps {}
 
-const ButtonLoader = ({loading, onClick}: IButtonProps) => {
+const Spinner = () => {
+  return (
+    <div>
+      <div className="loader center">
+        <i className="fas fa-spinner fa-pulse fa-3x fa-fw" />
+      </div>
+    </div>
+  )
+}
+
+const ButtonLoader = ({loading, onClick, title, spinner}: IButtonProps) => {
   return (
     <div>
       <div className="btn-container">
         <button className="btn" onClick={onClick}>
-          {loading ? (
-            <div className="loader">Randomizing...</div>
-          ) : (
-            <div>Randomize</div>
-          )}
+          {loading ? {spinner} : <div>{title}</div>}
         </button>
       </div>
     </div>
@@ -65,7 +73,11 @@ class RandomName extends React.Component<INameProps, INameState> {
         <div className="random-name">
           <p className="random-name-p">My name is...</p>
           <h2 className="random-name-title">{this.state.name}</h2>
-          <ButtonLoader onClick={this.fetchData} />
+          <ButtonLoader
+            onClick={this.fetchData}
+            title={'Randomize'}
+            spinner={<Spinner />}
+          />
         </div>
       </>
     )

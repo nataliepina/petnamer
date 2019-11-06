@@ -3,7 +3,8 @@ import AddName from './AddName'
 import Toggle from './Toggle'
 import ButtonLoader from './ButtonLoader'
 
-const endpoint = 'http://pet-namer.herokuapp.com/api/petnames'
+const endpoint = 'http://localhost:9000/petnames'
+// const endpoint = 'http://pet-namer.herokuapp.com/api/petnames'
 
 interface PetNameListProps {}
 

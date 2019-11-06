@@ -10,7 +10,7 @@ const Toggle = ({isToggleOn, handleClick}: IToggleProps) => {
     <>
       <div className="toggle-container">
         <button className="btn btn-add-name" onClick={handleClick}>
-          {isToggleOn ? 'x' : '+ Add A Name'}
+          {isToggleOn ? <i className="fas fa-times" /> : '+ Add A Name'}
         </button>
       </div>
     </>

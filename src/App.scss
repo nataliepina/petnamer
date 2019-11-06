@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,700&display=swap');
+@import "~font-awesome/scss/font-awesome";
 
 $primaryColor: #8f86e6;
 $white: #f1f1f1;
@@ -13,7 +14,7 @@ $white: #f1f1f1;
 }
 
 .App-header {
-  //background: radial-gradient(circle, rgba(32,91,244,1) 0%, rgba(190,111,186,1) 100%);
+  background: radial-gradient(circle, rgba(32,91,244,1) 0%, rgba(190,111,186,1) 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -56,9 +57,9 @@ $white: #f1f1f1;
       padding: 9px 10px;
     }
 
-    &-add-name {
-      margin-top: 5px;
-    }
+    // &-add-name {
+
+    // }
   }
 
 .btn:hover {
@@ -170,4 +171,68 @@ input[type=text]:focus {
     padding: 0;
     margin: 0;
   }
+}
+
+
+// Portal
+
+.portal-container {
+  background-color: #957DAD;
+  padding: 10em;
+  width: 100%;
+}
+
+
+.fas .fa-paw {
+  font-size: 30px;
+}
+
+
+.font-awesome-paw {
+  font-size: 1rem;
+}
+
+// Pluse animation for paw
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.faa-pulse.animated,
+.faa-pulse.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-pulse {
+  -webkit-animation: pulse 2s linear infinite;
+  animation: pulse 2s linear infinite;
 }

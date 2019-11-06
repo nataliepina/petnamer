@@ -1,0 +1,9 @@
+{
+  "testURL": "http://localhost:4000",
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
+  },
+  "moduleDirectories": [
+    "node_modules"
+  ]
+}

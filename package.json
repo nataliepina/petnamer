@@ -5,18 +5,20 @@
   "author": "Natalie Pina",
   "private": true,
   "dependencies": {
-    "@types/jest": "^24.0.19",
-    "@types/node": "^12.11.5",
+    "@types/jest": "^24.0.21",
+    "@types/node": "^12.12.5",
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "font-awesome": "^4.7.0",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",
+    "react-useportal": "^1.0.13",
     "sass-loader": "^8.0.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.2"
   },
   "scripts": {
     "ci": "yarn lint && yarn test && yarn build",
@@ -47,12 +49,12 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.6.0",
-    "@typescript-eslint/parser": "^2.6.0",
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-jest": "^23.0.0",
+    "eslint-plugin-jest": "^23.0.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "husky": "^3.0.9",
