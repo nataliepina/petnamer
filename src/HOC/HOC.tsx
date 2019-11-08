@@ -1,5 +1,6 @@
 import React from 'react'
 
+// eslint-disable react/display-name
 const withSecret = function withSecret(WrappedComponent: any) {
   return class extends React.Component {
     render() {
