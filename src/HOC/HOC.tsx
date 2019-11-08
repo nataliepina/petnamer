@@ -1,6 +1,6 @@
 import React from 'react'
 
-// eslint-disable react/display-name
+// @ts-ignore-start
 const withSecret = function withSecret(WrappedComponent: any) {
   return class extends React.Component {
     render() {
@@ -17,3 +17,4 @@ const withSecret = function withSecret(WrappedComponent: any) {
 }
 
 export default withSecret
+// @ts-ignore-end
