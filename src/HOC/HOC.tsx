@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function withSecret(WrappedComponent: any) {
+function withSecret(WrappedComponent: any) {
   return class extends React.Component {
     render() {
       return (
@@ -14,3 +14,5 @@ export default function withSecret(WrappedComponent: any) {
     }
   }
 }
+
+export default withSecret
