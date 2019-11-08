@@ -1,6 +1,6 @@
 import React from 'react'
 
-function withSecret(WrappedComponent: any) {
+const withSecret = function withSecret(WrappedComponent: any) {
   return class extends React.Component {
     render() {
       return (
