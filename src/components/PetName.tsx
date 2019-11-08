@@ -10,6 +10,9 @@ const PetName = (props: any) => {
       <img src={logo} className="App-logo" alt="logo" />
       <Greeting />
       <RandomName />
+      <div className="font-awesome-paw">
+        <i className="fas fa-paw faa-pulse animated fa-5x" />
+      </div>
     </div>
   )
 }

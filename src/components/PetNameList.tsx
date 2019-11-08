@@ -3,8 +3,7 @@ import AddName from './AddName'
 import Toggle from './Toggle'
 import ButtonLoader from './ButtonLoader'
 
-const endpoint = 'http://localhost:9000/petnames'
-// const endpoint = 'http://pet-namer.herokuapp.com/api/petnames'
+const ENDPOINT = `${process.env.REACT_APP_SERVICE_URL}/petnames`
 
 interface PetNameListProps {}
 
@@ -31,11 +30,13 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
       },
       async () => {
         try {
-          const response = await fetch(endpoint) // wait until we have the data
+          const response = await fetch(ENDPOINT) // wait until we have the data
           const collection = await response.json() // wait to parse json
-          this.setState({collection, loading: false})
+          console.log(collection)
+          this.setState({collection: collection || [], loading: false})
         } catch (error) {
-          console.error(error)
+          console.error('Problem fetching initial data', error)
+          this.setState({loading: false})
         }
       },
     )
@@ -44,7 +45,6 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
   postData = async (url = '', data = {}) => {
     const response = await fetch(url, {
       method: 'POST',
-      mode: 'cors',
       cache: 'no-cache',
       credentials: 'same-origin',
       headers: {
@@ -58,7 +58,7 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
   }
 
   handleSubmit = async (name: string) => {
-    const newPet = await this.postData(endpoint, {
+    const newPet = await this.postData(ENDPOINT, {
       name: name,
     })
     this.setState({
@@ -74,7 +74,11 @@ class PetNameList extends React.Component<PetNameListProps, PetNameListState> {
 
   render() {
     const list = this.state.collection.map(
-      ({id, name}: {id: number; name: string}) => <li key={id}>{name}</li>,
+      ({id, name}: {id: number; name: string}) => (
+        <li className="pet-name-list" key={id}>
+          {name}
+        </li>
+      ),
     )
     return (
       <div>
