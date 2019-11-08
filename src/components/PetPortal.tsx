@@ -19,9 +19,7 @@ const PetPortal = (props: any) => {
             <button className="btn" onClick={closePortal}>
               Close Portal
             </button>
-            <div>
-              <WrappedComponent />
-            </div>
+            <div>{/* <WrappedComponent /> */}</div>
           </div>
         </Portal>
       )}
