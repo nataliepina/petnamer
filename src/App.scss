@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,700&display=swap');
 @import "~font-awesome/scss/font-awesome";
 
+// Variables
+
 $primaryColor: #3181b6;
+$secondaryColor: #a579aa;
 $white: #f1f1f1;
+$fontSize: 18px;
+
+
+// Main page styles 
 
 .App {
   text-align: center;
@@ -14,7 +21,7 @@ $white: #f1f1f1;
 }
 
 .App-header {
-  background: #a579aa;
+  background: $secondaryColor;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,7 +41,12 @@ $white: #f1f1f1;
   padding: 3em 0;
 }
 
-// Pet Name
+.transition-gradient {
+  height: 200px;
+  background-image: linear-gradient(#a579aa, #69afc0);
+}
+
+// Pet Name header text
 
 .pet-name {
   margin-bottom: 2em;
@@ -51,7 +63,7 @@ $white: #f1f1f1;
 
 .btn {
   color: $white !important;
-  font-size: 18px;
+  font-size: $fontSize;
   text-transform: uppercase;
   text-decoration: none;
   background: none;
@@ -64,10 +76,6 @@ $white: #f1f1f1;
       font-size: 17px;
       padding: 9px 10px;
     }
-
-    // &-add-name {
-
-    // }
   }
 
 .btn:hover {
@@ -77,7 +85,7 @@ $white: #f1f1f1;
   transition: all 0.4s ease 0s;
 }
 
-// Pet Name List
+// Pet Name Ranked List
 
 ul {
   list-style: none;
@@ -122,7 +130,7 @@ input[type=text]:focus {
   align-items: center;
 }
 
-// Toggle
+// Toggle search
 
 .toggle-container {
   margin: 20px 10px;
@@ -132,12 +140,9 @@ input[type=text]:focus {
 .input-container {
   display: flex;
   flex: 1;
-  // &-form {
-  //   // margin-top: 17px;
-  // }
 }
 
-// Greeting
+// Greeting Text
 
 .speech-bubble {
 	position: relative;
@@ -168,7 +173,8 @@ input[type=text]:focus {
   margin-top: -15px;
 }
 
-//Random Name
+// Random Name Generator
+
 .random-name {
   margin: -1em 0 4em 0;
 
@@ -207,6 +213,7 @@ input[type=text]:focus {
 }
 
 // Pluse animation for paw
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale(1.1);

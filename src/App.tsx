@@ -10,6 +10,7 @@ function App() {
       <header className="App-header">
         <PetName>Cat Name Generator</PetName>
       </header>
+      <div className="transition-gradient" />
       <div className="section">
         <div>
           <PetNameList />
